@@ -1,0 +1,59 @@
+{% extends 'base.html.twig' %}
+{% block content %}
+        <div class="container-fluid">
+                <center style="margin-top:20px;margin-bottom:20px"><h3 class="text-secondary d-inline">Détails sur cet événement</h3></center>
+                <div class="row">
+                        <div class="col-12">
+                                <div class="card">
+                                        <div class="card-body">
+                                               
+                                                <h5 style="color: #76838f;">Le sponsor :
+                                                <ul>
+                                                        <li>Identifiant : {{ sponsor.idSponsor }}</li>
+                                                        <li>Nom du sponsor: {{ sponsor.nomSponsor }}</li>
+                                                        <li>Telephone du sponsor : {{ sponsor.telSponsor }}</li>
+                                                        <li>L'email du sponsor : {{ sponsor.emailSponsor }}</li>
+                                                        <li>Le montant : {{ sponsor.montant }}</li>
+                                                </ul>
+                                        
+                                                <h4 class="card-title">Les événements de ce sponsor : </h4>
+                                                <div class="table-responsive">
+                                                        <table class="table table-striped table-bordered zero-configuration">
+                                                                <thead>
+                                                                <tr>
+              <th>IdEvent</th>
+                <th>NomEvent</th>
+                <th>DateDebut</th>
+                <th>DateFin</th>
+                <th>LieuEvent</th>
+                <th>NbPlaces</th>
+                <th>TypeEvent</th>
+                <th>NbVues</th>
+                                                                </tr>
+                                                                </thead>
+                                                                <tbody>
+        {% for evenement in evenement %}
+                                                                <tr>
+              <td>{{ evenement.idEvent }}</td>
+                <td>{{ evenement.nomEvent }}</td>
+                <td>{{ evenement.dateDebut ? evenement.dateDebut|date('Y-m-d') : '' }}</td>
+                <td>{{ evenement.dateFin ? evenement.dateFin|date('Y-m-d') : '' }}</td>
+                <td>{{ evenement.lieuEvent }}</td>
+                <td>{{ evenement.nbPlaces }}</td>
+                <td>{{ evenement.typeEvent }}</td>
+                <td>{{ evenement.nbVues }}</td>
+                                                                            </tr>
+
+                                                                </tr>
+        {% endfor %}
+                                                                </tbody>
+                                                        </table>
+                                                </div>
+                                        </div>
+                                </div>
+                        </div>
+                </div>
+        </div>
+
+<br>
+{% endblock %}

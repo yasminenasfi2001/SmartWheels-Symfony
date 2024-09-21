@@ -1,0 +1,11 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}New Sponsor{% endblock %}
+
+{% block content %}
+    <center> <a href="{{ path('app_sponsor_index') }}" class="float-left" style="color:black;margin-left:7px"> <i class="nav-icon fas fa-chevron-left"></i> </a> <h1>Ajouter un nouveau Sponsor</h1></center>
+
+    {{ include('sponsor/_form.html.twig') }}
+
+   
+{% endblock %}

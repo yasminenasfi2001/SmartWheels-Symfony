@@ -1,0 +1,38 @@
+
+ {{ form_start(form,{attr:{novalidate:'novalidate'}}) }}
+
+ <label for="inputText" class="col-sm-4 col-form-label">Nom Evenement</label>
+                        <div class="col-sm-10">
+    {{ form_widget(form.nomEvent, {'attr': {'class': 'form-control '}}) }}
+    </div>
+    {{ form_errors(form.nomEvent, {'attr': {'class': 'text-danger'}}) }}
+
+ <label for="{{ form.dateDebut.vars.id }}" class="col-sm-4 col-form-label">Date de début</label>
+    <div class="col-sm-10">
+        {{ form_widget(form.dateDebut, {'attr': {'class': 'form-control'}}) }}
+    </div>
+    {{ form_errors(form.dateDebut, {'attr': {'class': 'text-danger'}}) }}
+
+ <label for="{{ form.dateFin.vars.id }}" class="col-sm-4 col-form-label">Date de fin</label>
+    <div class="col-sm-10">
+        {{ form_widget(form.dateFin, {'attr': {'class': 'form-control'}}) }}
+    </div>
+    {{ form_errors(form.dateFin, {'attr': {'class': 'text-danger'}}) }}
+ 
+<label for="inputText" class="col-sm-4 col-form-label">Lieu event</label>
+                        <div class="col-sm-10">
+    {{ form_widget(form.lieuEvent, {'attr': {'class': 'form-control'}}) }}
+    </div>
+    {{ form_errors(form.lieuEvent, {'attr': {'class': 'text-danger'}}) }}
+ <label for="{{ form.nbPlaces.vars.id }}" class="col-sm-4 col-form-label">Nombre de places</label>
+    <div class="col-sm-10">
+        {{ form_widget(form.nbPlaces, {'attr': {'class': 'form-control'}}) }}
+    </div>
+    {{ form_errors(form.nbPlaces, {'attr': {'class': 'text-danger'}}) }}
+<label for="inputText" class="col-sm-4 col-form-label">Type Evenement</label>
+                        <div class="col-sm-10">
+    {{ form_widget(form.typeEvent, {'attr': {'class': 'form-control'}}) }}
+    </div>
+    {{ form_errors(form.typeEvent, {'attr': {'class': 'text-danger'}}) }}
+    <center style="padding-right:450px;padding-left:450px"><button style="margin-top:20px" class="btn btn-secondary btn-block">{{ button_label|default('Ajouter événement') }}</button></center>
+{{ form_end(form) }}

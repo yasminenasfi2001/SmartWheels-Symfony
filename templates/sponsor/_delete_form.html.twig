@@ -1,0 +1,4 @@
+<form method="post" action="{{ path('app_sponsor_delete', {'idSponsor': sponsor.idSponsor}) }}" onsubmit="return confirm('Vous êtes sur de supprimer ce sponsor ?');">
+    <input type="hidden" name="_token" value="{{ csrf_token('delete' ~ sponsor.idSponsor) }}">
+    <center style="padding-right:450px;padding-left:450px"><button style="margin-top:20px" class="btn btn-danger btn-block">Supprimer ce Sponsor</button></center>
+</form>

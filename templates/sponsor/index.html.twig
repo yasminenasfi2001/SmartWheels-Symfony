@@ -1,0 +1,43 @@
+{% extends 'base.html.twig' %}
+
+{% block content %}
+    <center style="margin-bottom:20px"><h1 class="d-inline">Liste des Sponsors</h1> <a href="{{ path('app_sponsor_new')  }}" class="btn mb-1 btn-secondary float-right">Ajouter nouveau sponsor</a>
+</center>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>IdSponsor</th>
+                <th>NomSponsor</th>
+                <th>TelSponsor</th>
+                <th>EmailSponsor</th>
+                <th>Montant</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for sponsor in sponsors %}
+            <tr>
+                <td>{{ sponsor.idSponsor }}</td>
+                <td>{{ sponsor.nomSponsor }}</td>
+                <td>{{ sponsor.telSponsor }}</td>
+                <td>{{ sponsor.emailSponsor }}</td>
+                <td>{{ sponsor.montant }}</td>
+               
+                <td>
+                 
+                
+                <a class="btn btn-secondary" href="{{ path('app_sponsor_edit', {'idSponsor': sponsor.idSponsor}) }}">Modifier</a>
+                <a class="btn btn-dark" href='{{ path('detail_sponsor', {'idSponsor':sponsor.idSponsor})}}'> Détails</a>
+
+                </td>
+             </tr>
+        {% else %}
+            <tr>
+                <td colspan="6">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    
+{% endblock %}

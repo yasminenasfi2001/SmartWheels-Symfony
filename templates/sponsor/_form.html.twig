@@ -1,0 +1,27 @@
+
+{{ form_start(form,{attr:{novalidate:'novalidate'}}) }}
+
+ <label for="inputText" class="col-sm-4 col-form-label">Nom Sponsor</label>
+                        <div class="col-sm-10">
+    {{ form_widget(form.nomSponsor, {'attr': {'class': 'form-control '}}) }}
+    </div>
+    {{ form_errors(form.nomSponsor, {'attr': {'class': 'text-danger'}}) }}
+
+ <label for="inputText" class="col-sm-4 col-form-label">Tel Sponsor</label>
+                        <div class="col-sm-10">
+    {{ form_widget(form.telSponsor, {'attr': {'class': 'form-control '}}) }}
+    </div>
+    {{ form_errors(form.telSponsor, {'attr': {'class': 'text-danger'}}) }}
+
+ <label for="inputText" class="col-sm-4 col-form-label">Email Sponsor</label>
+                        <div class="col-sm-10">
+    {{ form_widget(form.emailSponsor, {'attr': {'class': 'form-control '}}) }}
+    </div>
+    {{ form_errors(form.emailSponsor, {'attr': {'class': 'text-danger'}}) }}
+ <label for="{{ form.vars.id }}_inputText" class="col-sm-4 col-form-label">Montant</label>
+<div class="col-sm-10">
+    {{ form_widget(form.montant, {'attr': {'class': 'form-control', 'type': 'number', 'step': '0.01'}}) }}
+</div>
+{{ form_errors(form.montant, {'attr': {'class': 'text-danger'}}) }}
+    <center style="padding-right:450px;padding-left:450px"><button style="margin-top:20px" class="btn btn-secondary btn-block">{{ button_label|default('Ajouter le sponsor') }}</button></center>
+{{ form_end(form) }}

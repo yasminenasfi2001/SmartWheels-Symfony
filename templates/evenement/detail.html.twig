@@ -1,0 +1,52 @@
+{% extends 'base.html.twig' %}
+
+{% block content %}
+        <div class="container-fluid">
+                <center style="margin-top:20px;margin-bottom:20px"><h3 class="d-inline" style="color:#7571f9;">Détails sur cet événement</h3></center>
+                <div class="row">
+                        <div class="col-12">
+                                <div class="card">
+                                        <div class="card-body">
+                                               
+                                                <h5 style="color: #76838f;">L'événement : {{ evenement.idEvent }}, Nom : {{ evenement.nomEvent }}, Date début : {{ evenement.dateDebut ? evenement.dateDebut|date('Y-m-d') : '' }} ,Date fin : {{ evenement.dateFin ? evenement.dateFin|date('Y-m-d') : '' }}, Lieu : {{ evenement.lieuEvent }},Nb places : {{ evenement.nbPlaces }}, Type : {{ evenement.typeEvent }} , Nb vues : {{ evenement.nbVues }} </h5>*/
+                                               
+                                                <h4 class="card-title">Les sponsors de cet événement : </h4>
+                                                <div class="table-responsive">
+                                                        <table class="table table-striped table-bordered zero-configuration">
+                                                                <thead>
+                                                                <tr>
+                                                                        <th>ID</th>
+                                                                        <th>Nom Sponsor</th>
+                                                                        <th>tel </th>
+                                                                        <th>E-mail</th>
+                                                                        <th>Montant</th>
+                                                                </tr>
+                                                                </thead>
+                                                                <tbody>
+        {% for sponsor in sponsor %}
+                                                                <tr>
+                                                                        <td>{{ sponsor.idSponsor }}</td>
+                                                                        <td>{{ sponsor.nomSponsor }}</td>
+                                                                        <td>{{ sponsor.telSponsor }}</td>
+                                                                        <td>{{ sponsor.emailSponsor }}</td>
+                                                                        <td>{{ sponsor.montant }}</td>
+                                                                            </tr>
+
+                                                                </tr>
+        {% endfor %}
+                                                                </tbody>
+                                                        </table>
+                                                </div>
+                                        </div>
+                                </div>
+                        </div>
+                </div>
+        </div>
+{{ form_start(form,{attr:{novalidate:'novalidate'}}) }}
+{{ form_widget(form.ID_sponsor, {'attr': {'class': 'form-control'}}) }}
+{{ form_widget(form.ID_event, {'attr': {'class': 'form-control'}}) }}
+{{ form_rest(form) }}
+<button type="submit" class="btn btn-primary">Submit</button>
+{{ form_end(form) }}
+<br>
+{% endblock %}

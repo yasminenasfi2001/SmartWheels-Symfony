@@ -1,0 +1,15 @@
+<<<<<<< HEAD
+controllers:
+    resource:
+        path: ../src/Controller/
+        namespace: App\Controller
+    type: attribute
+index:
+    path: /
+    controller: App\Controller\HomeController::index
+=======
+#index:
+#    path: /
+#    controller: App\Controller\DefaultController::index
+
+>>>>>>> 0a2dda5ad602af99a9b661ffb1c7c47b3b6697ec
